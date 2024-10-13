@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banka ve Döviz Seçin</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { max-width: 400px; margin: auto; }
+        h1 { margin-top: 20px; }
+        .bank-list a { display: block; margin: 10px 0; padding: 10px; background: #4CAF50; color: white; text-decoration: none; border-radius: 5px; }
+        .footer { margin-top: 20px; }
+        .footer a { margin: 0 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="firma_logo.png" alt="Firma Logosu" width="200"> <!-- Firma logonuzun ismi ve yolunu buraya koyun -->
+        <h1>Banka ve Döviz Seçin</h1>
+        <div class="bank-list">
+            <a href="#" onclick="goToBank('Yapıkredi TL', 'TR23 0013 4000 0224 5198 1000 01', 'Eska Plastik Ve Metal Turizm İnşaat Nakliye Tic. Ltd. Şti')">Yapıkredi TL</a>
+            <a href="#" onclick="goToBank('Denizbank TL', 'TR81 0006 7010 0000 0099 2826 99', 'Eska Plastik Ve Metal Turizm İnşaat Nakliye Tic. Ltd. Şti')">Denizbank TL</a>
+            <a href="#" onclick="goToBank('Yapıkredi EUR', 'TR95 0006 7010 0000 0099 2385 06', 'Eska Plastik Ve Metal Turizm İnşaat Nakliye Tic. Ltd. Şti')">Yapıkredi EUR</a>
+            <a href="#" onclick="goToBank('Yapıkredi USD', 'TR72 0006 7010 0000 0099 3190 42', 'Eska Plastik Ve Metal Turizm İnşaat Nakliye Tic. Ltd. Şti')">Yapıkredi USD</a>
+        </div>
+        <div class="footer">
+            <a href="https://api.whatsapp.com/send/?phone=905527365959&text=Merhabalar%2C+muhasebe+departmanına+ulaşmak+istiyorum.&type=phone_number&app_absent=0">Muhasebe</a>
+            <a href="https://api.whatsapp.com/send/?phone=905524802600&text=Merhabalar%2C+satış+departmanına+ulaşmak+istiyorum.&type=phone_number&app_absent=0">Satış Departmanı</a>
+            <a href="https://www.eskaplastik.com.tr">Web Sitesi</a>
+        </div>
+        <div class="ekatalog">
+            <a href="e-katalog.pdf" target="_blank" style="display: block; margin-top: 20px; padding: 10px; background: #FF5733; color: white; text-decoration: none; border-radius: 5px;">E-Katalog</a>
+        </div>
+    </div>
+
+    <script>
+        function goToBank(bankName, iban, receiverName) {
+            localStorage.setItem('bankName', bankName);
+            localStorage.setItem('iban', iban);
+            localStorage.setItem('receiverName', receiverName);
+            window.location.href = 'banka.html';
+        }
+    </script>
+</body>
+</html>
